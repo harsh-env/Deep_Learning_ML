@@ -17,7 +17,7 @@ Three ipynb files summarize the results where in the AlphabetSoupCharity_Optimiz
 4. Relu was used in 1ST, 2ND & 3RD activation and single neuron in 4TH layer with sigmoid activation
 5. Epochs were reduced to 60
 
-#### Accuracy Did Not change with increasing neurons and Epochs - 78.9%
+#### Accuracy Did Not change with increasing neurons and Epochs but by adding NAME Column to the model - 78.9%
 
 ### Summary: 
 The initial model, Starter_Code.ipynb produced an accuracy below 75% which was not satisfactory, where columns EIN & NAME were dropped as they were not thought of features or target. In AlphabetSoupCharity_Optimization.ipynb, another layer was added and neurons were doubled in the 1st layer to see if it affected the model accuracy. As a result, I analyzed the dataset and realized that adding back the NAME as a feature is relevant as this determines the number of times the applicant applied for a funding. However, there is too much noise (variance) on NAME, which had to be reduced through binning.
