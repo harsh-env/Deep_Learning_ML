@@ -1,3 +1,29 @@
+## Step 4: Neural Network Final Report
+
+### Overview
+The nonprofit foundation, Alphabet Soup needed a tool that can help it select the applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, an algorithm is developed to predict the applicant's success in their venture using various features. This algorithm will enable the foundation to assist in deciding whether to select the applicant for funding.
+
+### Results:
+##### Data Processing
+In the preprocessing of data, IS_SUCCESSFUL variable was identified as the target. The purpose of the model is to determine the success of the applicant which is dependent on how effectively they use the fund. 
+
+### Files:
+Three ipynb files summarize the results where in the AlphabetSoupCharity_Optimization1.ipynb provides accruacy above 75% for the dataset.
+
+#### AlphabetSoupCharity_Optimization1.ipynb: 
+1. Only the EIN column was dropped, & KEPT THE NAME Column to see if it increases model accuracy. The remaining variables in the dataset were retained as features. Binning were done to reduce the noise on our model.
+2. IS_SUCCESSFUL variable was identified as the target
+3. OPTIMIZATION TRIAL1 Model run: 160, 30 & 18 neurons for 1ST, 2ND & 3RD layers were maintained from previous run. 
+4. Relu was used in 1ST, 2ND & 3RD activation and single neuron in 4TH layer with sigmoid activation
+5. Epochs were reduced to 60
+
+#### Accuracy Did Not change with increasing neurons and Epochs - 78.9%
+
+### Summary: 
+The initial model, Starter_Code.ipynb produced an accuracy below 75% which was not satisfactory, where columns EIN & NAME were dropped as they were not thought of features or target. In AlphabetSoupCharity_Optimization.ipynb, another layer was added and neurons were doubled in the 1st layer to see if it affected the model accuracy. As a result, I analyzed the dataset and realized that adding back the NAME as a feature is relevant as this determines the number of times the applicant applied for a funding. However, there is too much noise (variance) on NAME, which had to be reduced through binning.
+
+In order to optimize the model, AlphabetSoupCharity_Optimization1.ipynb, I needed to reduce the noise caused by the NAME variable by further binning names with count of less than 5 (reducing the uniques from 19568 to 403). The third layer was maintained from earlier run which had 160, 30 and 18 neurons, for the 1st, 2nd and 3rd layers. The epoch was also reduced to 60 from 100 from previous run. The output layer's activation function was retained to sigmoid as the model is supposed classify whether the applications will be successful or not. These changes enable the model to produce an accuracy rate of above 75% or 79%.
+
 # Unit 21 Homework: Charity Funding Predictor
 
 ## Background
@@ -91,60 +117,12 @@ Using any or all of the following methods to optimize your model:
 
 5. Save and export your results to an HDF5 file. Name the file `AlphabetSoupCharity_Optimization.h5`.
 
-### Step 4: Write a Report on the Neural Network Model
-
-For this part of the assignment, you’ll write a report on the performance of the deep learning model you created for AlphabetSoup.
-
-The report should contain the following:
-
-1. **Overview** of the analysis: Explain the purpose of this analysis.
-
-2. **Results**: Using bulleted lists and images to support your answers, address the following questions.
-
-  * Data Preprocessing
-    * What variable(s) are the target(s) for your model?
-    * What variable(s) are the features for your model?
-    * What variable(s) should be removed from the input data because they are neither targets nor features?
-  
-* Compiling, Training, and Evaluating the Model
-    * How many neurons, layers, and activation functions did you select for your neural network model, and why?
-    * Were you able to achieve the target model performance?
-    * What steps did you take in your attempts to increase model performance?
-
-3. **Summary**: Summarize the overall results of the deep learning model. Include a recommendation for how a different model could solve this classification problem, and then explain your recommendation.
-
-- - -
-
 ## Rubric
 
 [Unit 21 Homework Rubric](https://docs.google.com/document/d/1SLOROX0lqZwa1ms-iRbHMQr1QSsMT2k0boO9YpFBnHA/edit?usp=sharing)
 
 - - - 
-## Step 4: Neural Network Final Report
 
-### Overview
-The nonprofit foundation, Alphabet Soup needed a tool that can help it select the applicants for funding with the best chance of success in their ventures. Using machine learning and neural networks, an algorithm is developed to predict the applicant's success in their venture using various features. This algorithm will enable the foundation to assist in deciding whether to select the applicant for funding.
-
-### Results:
-##### Data Processing
-In the preprocessing of data, IS_SUCCESSFUL variable was identified as the target. The purpose of the model is to determine the success of the applicant which is dependent on how effectively they use the fund. 
-
-### Files:
-Three ipynb files summarize the results where in the AlphabetSoupCharity_Optimization1.ipynb provides accruacy above 75% for the dataset.
-
-#### AlphabetSoupCharity_Optimization1.ipynb: 
-1. Only the EIN column was dropped, & KEPT THE NAME Column to see if it increases model accuracy. The remaining variables in the dataset were retained as features. Binning were done to reduce the noise on our model.
-2. IS_SUCCESSFUL variable was identified as the target
-3. OPTIMIZATION TRIAL1 Model run: 160, 30 & 18 neurons for 1ST, 2ND & 3RD layers were maintained from previous run. 
-4. Relu was used in 1ST, 2ND & 3RD activation and single neuron in 4TH layer with sigmoid activation
-5. Epochs were reduced to 60
-
-#### Accuracy Did Not change with increasing neurons and Epochs - 78.9%
-
-### Summary: 
-The initial model, Starter_Code.ipynb produced an accuracy below 75% which was not satisfactory, where columns EIN & NAME were dropped as they were not thought of features or target. In AlphabetSoupCharity_Optimization.ipynb, another layer was added and neurons were doubled in the 1st layer to see if it affected the model accuracy. As a result, I analyzed the dataset and realized that adding back the NAME as a feature is relevant as this determines the number of times the applicant applied for a funding. However, there is too much noise (variance) on NAME, which had to be reduced through binning.
-
-In order to optimize the model, AlphabetSoupCharity_Optimization1.ipynb, I needed to reduce the noise caused by the NAME variable by further binning names with count of less than 5 (reducing the uniques from 19568 to 403). The third layer was maintained from earlier run which had 160, 30 and 18 neurons, for the 1st, 2nd and 3rd layers. The epoch was also reduced to 60 from 100 from previous run. The output layer's activation function was retained to sigmoid as the model is supposed classify whether the applications will be successful or not. These changes enable the model to produce an accuracy rate of above 75% or 79%.
 
 © 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.	
 
